@@ -269,8 +269,8 @@ impl RsFieldType {
 macro_rules! derive_rust_object {
     ($object:ident $serde:expr, $($trait:ident),* $(!partial $($partial_trait:ident),*)?) => {
         if $serde {
-            $object.derive("Serialize");
-            $object.derive("Deserialize");
+            $object.derive("serde::Serialize");
+            $object.derive("serde::Deserialize");
         }
         $object.derive("Clone");
         $object.derive("Debug");
